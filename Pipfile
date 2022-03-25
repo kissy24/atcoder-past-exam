@@ -8,6 +8,7 @@ pytest = "*"
 numpy = "*"
 pytest-mock = "*"
 pandas = "*"
+atomicwrites = "*"
 
 [dev-packages]
 
