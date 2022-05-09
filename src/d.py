@@ -27,8 +27,8 @@ def find_dup_and_miss_num(seq: list[int]) -> Union[tuple[int, int], tuple[None, 
 
 
 def main():
-    len = int(input())
-    seq = [int(input()) for _ in range(len)]
+    len_ = int(input())
+    seq = [int(input()) for _ in range(len_)]
     dup, miss = find_dup_and_miss_num(seq)
     msg = Message.not_missing if miss is None else Message.missing
     print(msg.format(dup=dup, miss=miss))
