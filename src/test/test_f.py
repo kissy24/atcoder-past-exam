@@ -10,5 +10,5 @@ class Test_sort_by_double_camel:
             ("AAAAAjhfgaBCsahdfakGZsZGdEAA", "AAAAAAAjhfgaBCsahdfakGGdEZsZ"),
         ],
     )
-    def test_ReturnsSortedDoubleCamels(self, chars, expected):
+    def test_returnsSortedDoubleCamels(self, chars, expected):
         assert sort_by_double_camel(chars) == expected

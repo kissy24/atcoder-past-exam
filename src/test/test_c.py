@@ -1,5 +1,5 @@
 import pytest
-from ..c import PickThirdLargestNumber
+from ..c import pick_third_largest_num
 
 
 @pytest.mark.parametrize(
@@ -10,6 +10,6 @@ from ..c import PickThirdLargestNumber
         ([19, 92, 3, 35, 78, 1], 35),
     ],
 )
-class Test_PickThirdLargestNumber:
-    def test_ReturnsThirdLargestNumber_TakesSequence(self, sequence, expected):
-        assert PickThirdLargestNumber(sequence) == expected
+class Test_pick_third_largest_num:
+    def test_returnsThirdLargestNumber_takesSequence(self, sequence, expected):
+        assert pick_third_largest_num(sequence) == expected
