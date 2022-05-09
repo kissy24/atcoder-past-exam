@@ -1,4 +1,4 @@
-def PickThirdLargestNumber(sequence: list[int]) -> int:
+def pick_third_largest_num(sequence: list[int]) -> int:
     """数列から3番目に大きい整数を取得する
     Args:
         sequence (list): 整数のリスト
@@ -10,7 +10,7 @@ def PickThirdLargestNumber(sequence: list[int]) -> int:
 
 def main():
     seq = list(map(int, input().split()))
-    print(PickThirdLargestNumber(seq))
+    print(pick_third_largest_num(seq))
 
 
 if __name__ == "__main__":
