@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field, InitVar
 
 
-@dataclass(frozen=True)
+@dataclass
 class User:
     id: int
     following: list[int] = field(init=False, default_factory=list)
