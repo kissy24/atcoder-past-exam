@@ -1,4 +1,4 @@
-![](https://img.shields.io/github/pipenv/locked/python-version/:user/:repo)
+![](https://img.shields.io/github/pipenv/locked/python-version/kissy24/atcoder-past-exam)
 ![](https://img.shields.io/github/workflow/status/kissy24/atcoder-past-exam/test)
 ![](https://img.shields.io/github/license/kissy24/atcoder-past-exam)
 
