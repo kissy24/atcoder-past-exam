@@ -59,7 +59,7 @@ class SNS:
     logs: list[list[int]]
     users: Users = field(init=False, default_factory=Users)
 
-    def __post_init__(self, user_cnt):
+    def __post_init__(self, user_cnt: int):
         self.users.__init__(user_cnt)
 
     @property
