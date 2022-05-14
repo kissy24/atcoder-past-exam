@@ -1,5 +1,6 @@
 ![](https://img.shields.io/github/pipenv/locked/python-version/kissy24/atcoder-past-exam)
 ![](https://img.shields.io/github/workflow/status/kissy24/atcoder-past-exam/test)
+[![codecov](https://codecov.io/gh/kissy24/atcoder-past-exam/branch/main/graph/badge.svg?token=NOAO68A214)](https://codecov.io/gh/kissy24/atcoder-past-exam)
 ![](https://img.shields.io/github/license/kissy24/atcoder-past-exam)
 
 # atcoder-past-exam
