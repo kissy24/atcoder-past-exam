@@ -1,5 +1,5 @@
 import pytest
-from ..e import User, Users, SNS, parse
+from ..e import User, Users, SNS
 
 
 @pytest.fixture
@@ -44,23 +44,41 @@ class Test_User:
 
 class Test_Users:
     def test_init(self):
-        ...
+        users = Users(3)
+        assert users == [User(i) for i in range(3)]
+        assert str(users) == "NNN\nNNN\nNNN"
+        assert users.__len__() == 3
 
 
 class Test_SNS:
+    @pytest.fixture
+    def sns(self) -> SNS:
+        return SNS(3, [[1, 1, 2], [1, 2, 3], [2, 3], [3, 1]])
+
     class Test_restore:
-        ...
+        def test_restore(self, sns: SNS):
+            assert str(sns.restore()) == "NYY\nNNY\nNYN"
 
     class Test_follow:
-        ...
+        def test_follow(self, sns: SNS):
+            sns.follow(1, 2)
+            assert sns.users[1].following == [2]
+            assert sns.users[2].follower == [1]
 
     class Test_follow_back:
-        ...
+        def test_follow_back(self, sns: SNS):
+            sns.users[1].follower = [2]
+            sns.users[2].following = [1]
+            sns.follow_back(1)
+            assert sns.users[1].following == [2]
+            assert sns.users[2].follower == [1]
 
     class Test_follow_follow:
-        ...
-
-
-class Test_parse:
-    def test_parse(self):
-        ...
+        def test_follow_follow(self, sns: SNS):
+            sns.users[0].following = [1]
+            sns.users[1].follower = [0]
+            sns.users[1].following = [2]
+            sns.users[2].follower = [1]
+            sns.follow_follow(0)
+            assert sns.users[0].following == [1, 2]
+            assert sns.users[2].follower == [1, 0]
