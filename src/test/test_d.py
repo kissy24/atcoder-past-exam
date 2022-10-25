@@ -1,9 +1,12 @@
-from ..d import find_dup_and_miss_num
+from ..d import DuplicateInspection
 
 
-class Test_find_dup_and_miss_num:
-    def test_returnsNones_takesSerialNumbers(self):
-        assert find_dup_and_miss_num([1, 2, 3, 4, 5, 6]) == (None, None)
+class Test_DuplicateInspection:
+    class Test_inspect:
+        def test_returnsDuplicatedPair_thisClassHasDuplicatedSequence(self):
+            di = DuplicateInspection([1, 2, 3, 4, 5, 5])
+            assert di.inspect() == "5 6"
 
-    def test_returnsTuple_takesDuplicateNumbers(self):
-        assert find_dup_and_miss_num([1, 2, 3, 4, 5, 5]) == (5, 6)
+        def test_returnsCorrect_thisClassHasNonDuplicatedSequence(self):
+            di = DuplicateInspection([1, 2, 3, 4, 5, 6])
+            assert di.inspect() == "Correct"
