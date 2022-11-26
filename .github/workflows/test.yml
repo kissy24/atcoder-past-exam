@@ -14,10 +14,10 @@ jobs:
       - name: Install pipenv
         run: pipx install pipenv
       - uses: actions/setup-python@v3
-      - name: Setup python
         with:
           python-version: "3.9"
           cache: "pipenv"
+      - name: Setup python
         run: pipenv sync
       - name: Run pytest and collect coverage
         run: pipenv run pytest -vv --cov=src/ --cov-report=html
