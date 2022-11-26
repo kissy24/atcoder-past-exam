@@ -16,11 +16,13 @@ jobs:
         run: pipx install pipenv
       - name: Setup python
         uses: actions/setup-python@v3
-          with:
-            python-version: "3.9"
-            cache: "pipenv"
+        with:
+          python-version: "3.9"
+          cache: "pipenv"
         run: pipenv sync
       - name: Run pytest and collect coverage
         run: pipenv run pytest -vv --cov=src/ --cov-report=html
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
