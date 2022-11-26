@@ -12,6 +12,11 @@ class DuplicateInspection(Counter):
         self.update(sequence)
 
     def inspect(self) -> str:
+        """重複を検査する
+
+        Returns:
+            str: 検査の結果
+        """
         dup_num, dup_cnt = self.most_common()[0]
         miss_num, miss_cnt = self.most_common()[-1]
         return "Correct" if dup_cnt == miss_cnt else f"{dup_num} {miss_num}"
